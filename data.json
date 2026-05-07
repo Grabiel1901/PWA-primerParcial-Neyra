@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nombre": "Counter-Strike 2",
+        "descripcion": "Juego de disparos en primera persona donde dos equipos compiten en misiones de ataque y defensa.",
+        "categoria": "FPS",
+        "imagen": "img/imagen-1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "League of Legends",
+        "descripcion": "MOBA estratégico en el que dos equipos de cinco jugadores luchan para destruir la base enemiga.",
+        "categoria": "MOBA",
+        "imagen": "img/imagen-2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Fortnite",
+        "descripcion": "Battle Royale donde los jugadores sobreviven en una isla mientras construyen estructuras y eliminan rivales.",
+        "categoria": "Battle Royale",
+        "imagen": "img/imagen-3.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "EA Sports FC 26",
+        "descripcion": "Simulador de fútbol con equipos, ligas y jugadores reales de todo el mundo.",
+        "categoria": "Deportes",
+        "imagen": "img/imagen-4.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Minecraft",
+        "descripcion": "Juego de construcción y supervivencia en un mundo abierto compuesto por bloques.",
+        "categoria": "Sandbox",
+        "imagen": "img/imagen-5.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Valorant",
+        "descripcion": "Shooter táctico en primera persona donde agentes con habilidades especiales compiten en partidas por equipos.",
+        "categoria": "FPS",
+        "imagen": "img/imagen-6.jpg"
+    }
+]

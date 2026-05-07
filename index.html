@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="app">
+  <header>
+    <h1></h1>
+    <div class="buscador">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <input v-model="buscar" placeholder="Buscar videojuegos..." value="" />
+      <p>{{buscar}}</p>
+    </div>
+  </header>
+  <main>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="contenedor container-fluid d-flex flex-lg-wrap justify-content-evenly gap-3 align-items-start pb-5">
+      <div v-for="juego in juegos" :key="juego.id" class="card col-3">
+        <figure>
+          <img class="img-top w-100" :src="juego.imagen" :alt="juego.nombre" />
+        </figure>
+        <div class="card-body">
+          <span>{{juego.categoria}}</span>
+          <p>{{juego.nombre}}</p>
+          <div class="gap-3 d-flex botones">
+            <button @click="verDesc(juego)" class="w-50 p-2 border-0 bg-transparent d-flex align-items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+              </svg>Descripcion
+            </button>
+            <div class="w-50 gap-1 d-flex justify-content-end">
+              <button @click="fav(juego)" class="border-0 bg-transparent">
+                <svg xmlns="http://www.w3.org/2000/svg"  :style="{fill:juego.favorito?'gold':'black'}" class="bi bi-bookmark" viewBox="0 0 16 16">
+                  <path
+                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z" />
+                </svg>
+              </button>
+              <button @click="eliminarJuego(juego.id)" class=" border-0 bg-transparent">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 256 256">
+                  <path class="w-100"
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div v-if="juego.mostrarDesc===true">
+            <div class="card card-body border-0">
+              <p>{{juego.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
