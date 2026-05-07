@@ -3,11 +3,13 @@ const app = Vue.createApp({
         return {
             buscar: "",
             juegos: [],
-            cargando: true
         }
 
     },
     computed: {
+        juegosFiltrados() {
+            return this.juegos.filter(j => j.nombre.toLowerCase().includes(this.buscar.toLowerCase()))
+        }
 
     },
     methods: {
@@ -44,7 +46,6 @@ const app = Vue.createApp({
             }
         } catch (error) {
             console.error('Error al acargar los datos: ', error)
-            this.cargando = false
         }
 
     }
