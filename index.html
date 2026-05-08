@@ -12,8 +12,8 @@
 
 <body id="app">
   <header class="d-flex align-items-center justify-content-between p-3">
-    <h1>TIenda De Juegos</h1>
-    <div class="buscador gap-3 d-flex">
+    <h1 class="w-50">TIenda De Juegos</h1>
+    <div class="buscador gap-3 w-50 d-flex">
       <svg xmlns="http://www.w3.org/2000/svg">
         <circle cx="11" cy="11" r="8"></circle>
         <path d="m21 21-4.3-4.3"></path>
@@ -31,8 +31,8 @@
       <p>Cargando los juegos...</p>
     </div>
 
-    <div v-if="!cargando" class="contenedor container-fluid d-flex flex-lg-wrap justify-content-evenly gap-3 align-items-start pb-5">
-      <div  v-for="juego in juegosFiltrados" :key="juego.id" class="card rounded-3 col-3 ">
+    <div v-if="!cargando" class="contenedor container-fluid d-flex flex-wrap justify-content-evenly gap-3 align-items-start pb-5">
+      <div  v-for="juego in juegosFiltrados" :key="juego.id" class="card rounded-3 col-12 col-sm-3">
         <figure class="m-0">
           <img class="img-top w-100 rounded-3" :src="juego.imagen" :alt="juego.nombre" />
         </figure>
