@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return {
             buscar: "",
             juegos: [],
+            cargando:true
         }
 
     },
@@ -37,7 +38,6 @@ const app = Vue.createApp({
                 mostrarDesc: false,
                 favorito: false
             }))
-            this.cargando = false
             const idsFavoritos = JSON.parse(localStorage.getItem('favoritos'))
             if (idsFavoritos) {
                 this.juegos.forEach(juego => {
@@ -46,6 +46,8 @@ const app = Vue.createApp({
             }
         } catch (error) {
             console.error('Error al acargar los datos: ', error)
+        } finally{
+            this.cargando = false
         }
 
     }
