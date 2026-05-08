@@ -81,6 +81,12 @@ body {
     border: 1px solid #7c3bed;
 }
 
+.card-body span{
+    font-size: .6em !important;
+    color: #fafafa8a;
+    text-transform: uppercase;
+}
+
 .verMAs {
     background-color: rgba(32, 32, 39, 0.5) !important;
     font-size: 0.8rem;
